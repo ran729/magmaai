@@ -2,7 +2,6 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Problem from "@/components/Problem";
 import Solution from "@/components/Solution";
-import ContextGraph from "@/components/ContextGraph";
 import Team from "@/components/Team";
 import WaitlistForm from "@/components/WaitlistForm";
 import Footer from "@/components/Footer";
@@ -14,7 +13,6 @@ const Index = () => {
       <Hero />
       <Problem />
       <Solution />
-      <ContextGraph />
       <Team />
       <WaitlistForm />
       <Footer />

@@ -22,7 +22,7 @@ const Team = () => {
     <section id="team" className="py-24 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-background" />
-      
+
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
@@ -50,10 +50,10 @@ const Team = () => {
                   {founder.name.split(" ").map(n => n[0]).join("")}
                 </span>
               </div>
-              
+
               <h3 className="font-display text-2xl font-bold mb-1">{founder.name}</h3>
               <div className="text-primary font-semibold mb-4">{founder.role}</div>
-              
+
               <div className="space-y-3 text-muted-foreground">
                 <p className="font-medium text-foreground">{founder.background}</p>
                 <p>{founder.achievement}</p>
@@ -67,34 +67,6 @@ const Team = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Our Edge */}
-        <div className="mt-20 volcanic-glass rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
-          <h3 className="font-display text-2xl font-bold text-center mb-8">Our Edge</h3>
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🎯</span>
-              </div>
-              <div className="font-display font-bold mb-2">Deep Scaling</div>
-              <div className="text-muted-foreground text-sm">Proprietary Experience</div>
-            </div>
-            <div>
-              <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🏗️</span>
-              </div>
-              <div className="font-display font-bold mb-2">AI-Native</div>
-              <div className="text-muted-foreground text-sm">Architecture</div>
-            </div>
-            <div>
-              <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">⏰</span>
-              </div>
-              <div className="font-display font-bold mb-2">Market Timing</div>
-              <div className="text-muted-foreground text-sm">Agentic Era</div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
