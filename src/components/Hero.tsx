@@ -1,65 +1,54 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
+import volcanoBackground from "@/assets/volcano-background.png";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-volcanic-surface" />
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[150px] animate-pulse-glow" />
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
-      
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-5xl mx-auto text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full volcanic-glass mb-8 animate-fade-in">
-            <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-sm text-muted-foreground">The Authority for AI-Native R&D</span>
+    <section className="relative min-h-screen flex flex-col overflow-hidden">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${volcanoBackground})` }}
+      />
+
+      {/* Top Section - Headline */}
+      <div className="relative z-10 pt-28 pb-8">
+        <div className="container mx-auto px-6">
+          <div className="max-w-5xl mx-auto text-center">
+            <h1 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold animate-fade-in tracking-wide">
+              <span className="text-foreground" style={{ textShadow: '0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6)' }}>The Authority for </span>
+              <span className="gradient-magma-text glow-text">AI-Native</span>
+              <span className="text-foreground" style={{ textShadow: '0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6)' }}> R&D</span>
+            </h1>
           </div>
+        </div>
+      </div>
 
-          {/* Main Headline */}
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-            <span className="text-foreground">Transform Into an</span>
-            <br />
-            <span className="gradient-magma-text glow-text">AI-Native Organization</span>
-          </h1>
+      {/* Middle Section - Spacer for Volcano */}
+      <div className="flex-1" />
 
-          {/* Subheadline */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            From manual coding to scalable orchestration. Enable 10X scope governance 
-            and transform your engineers from hand-holders to architects.
-          </p>
+      {/* Bottom Section - Subheadline & CTAs */}
+      <div className="relative z-10 pb-24">
+        <div className="container mx-auto px-6">
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+              From manual coding to scalable orchestration. Enable 10X scope governance
+              and transform your engineers from hand-holders to architects.
+            </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in" style={{ animationDelay: "0.3s" }}>
-            <Button variant="magma" size="xl" asChild>
-              <a href="#waitlist">
-                Join the Waitlist
-                <ArrowRight className="w-5 h-5" />
-              </a>
-            </Button>
-            <Button variant="magma-outline" size="xl" asChild>
-              <a href="#solution">
-                Learn More
-              </a>
-            </Button>
-          </div>
-
-          {/* Social Proof */}
-          <div className="mt-16 flex flex-wrap justify-center gap-8 items-center animate-fade-in" style={{ animationDelay: "0.4s" }}>
-            <div className="text-center">
-              <div className="font-display text-3xl font-bold gradient-magma-text">50+</div>
-              <div className="text-sm text-muted-foreground">R&D Orgs on Waitlist</div>
-            </div>
-            <div className="w-px h-12 bg-border hidden sm:block" />
-            <div className="text-center">
-              <div className="font-display text-3xl font-bold gradient-magma-text">Live</div>
-              <div className="text-sm text-muted-foreground">Demo Available</div>
-            </div>
-            <div className="w-px h-12 bg-border hidden sm:block" />
-            <div className="text-center">
-              <div className="font-display text-3xl font-bold gradient-magma-text">Validated</div>
-              <div className="text-sm text-muted-foreground">Design Partner</div>
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in" style={{ animationDelay: "0.3s" }}>
+              <Button variant="magma" size="xl" asChild>
+                <a href="#waitlist">
+                  Join the Waitlist
+                  <ArrowRight className="w-5 h-5" />
+                </a>
+              </Button>
+              <Button variant="magma-outline" size="xl" asChild>
+                <a href="#solution">
+                  Learn More
+                </a>
+              </Button>
             </div>
           </div>
         </div>
