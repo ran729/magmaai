@@ -33,6 +33,10 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          # For custom domain: set VITE_BASE_PATH to '/' in repository secrets/variables
+          # For GitHub Pages subdirectory: leave unset (defaults to '/magmaai/')
+          VITE_BASE_PATH: ${{ vars.VITE_BASE_PATH }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
