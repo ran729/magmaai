@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 @layer base {
   :root {
@@ -179,5 +179,92 @@
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+/* Flowing lava particle animations */
+@keyframes flow-1 {
+  0% {
+    left: -5%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    left: 105%;
+    opacity: 0;
+  }
+}
+
+@keyframes flow-2 {
+  0% {
+    left: -5%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.8;
+  }
+  85% {
+    opacity: 0.8;
+  }
+  100% {
+    left: 105%;
+    opacity: 0;
+  }
+}
+
+@keyframes flow-3 {
+  0% {
+    left: -5%;
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 1;
+  }
+  100% {
+    left: 105%;
+    opacity: 0;
+  }
+}
+
+@keyframes flow-4 {
+  0% {
+    left: -5%;
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.6;
+  }
+  92% {
+    opacity: 0.6;
+  }
+  100% {
+    left: 105%;
+    opacity: 0;
+  }
+}
+
+@layer components {
+  .animate-flow-1 {
+    animation: flow-1 8s ease-in-out infinite;
+  }
+
+  .animate-flow-2 {
+    animation: flow-2 10s ease-in-out infinite 1s;
+  }
+
+  .animate-flow-3 {
+    animation: flow-3 9s ease-in-out infinite 2s;
+  }
+
+  .animate-flow-4 {
+    animation: flow-4 11s ease-in-out infinite 3s;
   }
 }

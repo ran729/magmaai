@@ -67,23 +67,118 @@ const Problem = () => {
         </div>
 
         {/* Evolution Timeline */}
-        <div className="mt-20 volcanic-glass rounded-2xl p-8 md:p-12">
-          <h3 className="font-display text-2xl font-bold text-center mb-12">The Evolution of Engineering</h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center opacity-50">
-              <div className="text-5xl mb-4">🥄</div>
-              <div className="font-display font-bold mb-2">The Spoon Era</div>
-              <div className="text-muted-foreground text-sm">Manual Coding</div>
+        <div className="mt-20">
+          <h3 className="font-display text-2xl md:text-3xl font-bold text-center mb-16">
+            The Evolution of Engineering
+          </h3>
+
+          <div className="relative">
+            {/* Flowing Lava Path */}
+            <div className="absolute top-1/2 left-0 right-0 h-2 -translate-y-1/2 hidden md:block">
+              <div className="absolute inset-0 bg-gradient-to-r from-gray-800 via-primary/40 to-primary rounded-full overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/60 to-primary animate-pulse" />
+              </div>
+              {/* Flowing particles effect */}
+              <div className="absolute inset-0 overflow-hidden">
+                <div className="absolute w-3 h-3 rounded-full bg-primary/80 blur-sm animate-flow-1" style={{ top: '-2px', left: '10%' }} />
+                <div className="absolute w-2 h-2 rounded-full bg-magma-glow/60 blur-sm animate-flow-2" style={{ top: '-1px', left: '30%' }} />
+                <div className="absolute w-3 h-3 rounded-full bg-primary/80 blur-sm animate-flow-3" style={{ top: '-2px', left: '50%' }} />
+                <div className="absolute w-2 h-2 rounded-full bg-magma-glow/60 blur-sm animate-flow-4" style={{ top: '-1px', left: '70%' }} />
+              </div>
             </div>
-            <div className="text-center opacity-70">
-              <div className="text-5xl mb-4">🔧</div>
-              <div className="font-display font-bold mb-2">The Shovel Era</div>
-              <div className="text-muted-foreground text-sm">Copilot / Code Completion</div>
-            </div>
-            <div className="text-center">
-              <div className="text-5xl mb-4 animate-pulse-glow">⚡</div>
-              <div className="font-display font-bold mb-2 gradient-magma-text">The Excavator Era</div>
-              <div className="text-muted-foreground text-sm">Agentic Workforce</div>
+
+            {/* Evolution Stages */}
+            <div className="grid md:grid-cols-3 gap-8 relative z-10">
+              {/* Spoon Era - Cold/Dark */}
+              <div className="group relative">
+                <div className="volcanic-glass rounded-2xl p-8 border border-gray-800/50 hover:border-gray-600/50 transition-all duration-500">
+                  {/* Icon Container */}
+                  <div className="relative mb-6">
+                    <div className="w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center relative overflow-hidden group-hover:scale-110 transition-transform duration-500">
+                      <div className="absolute inset-0 bg-gradient-to-br from-gray-700/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <span className="text-4xl relative z-10">🥄</span>
+                    </div>
+                    {/* Progress indicator */}
+                    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-gray-700 border-2 border-volcanic-surface hidden md:block" />
+                  </div>
+
+                  <div className="text-center space-y-3">
+                    <h4 className="font-display text-xl font-bold text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
+                      The Spoon Era
+                    </h4>
+                    <p className="text-sm text-muted-foreground">Manual Coding</p>
+                    <div className="pt-4 border-t border-gray-800/50">
+                      <p className="text-xs text-gray-600 group-hover:text-gray-500 transition-colors duration-300">
+                        Line by line, character by character
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Shovel Era - Warming Up */}
+              <div className="group relative">
+                <div className="volcanic-glass rounded-2xl p-8 border border-primary/20 hover:border-primary/40 transition-all duration-500 hover-glow">
+                  {/* Icon Container */}
+                  <div className="relative mb-6">
+                    <div className="w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br from-magma-red/30 to-primary/30 flex items-center justify-center relative overflow-hidden group-hover:scale-110 transition-transform duration-500">
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <span className="text-4xl relative z-10">🔧</span>
+                      {/* Subtle glow */}
+                      <div className="absolute inset-0 blur-xl bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    </div>
+                    {/* Progress indicator */}
+                    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-primary/60 border-2 border-volcanic-surface hidden md:block animate-pulse" />
+                  </div>
+
+                  <div className="text-center space-y-3">
+                    <h4 className="font-display text-xl font-bold text-primary/80 group-hover:text-primary transition-colors duration-300">
+                      The Shovel Era
+                    </h4>
+                    <p className="text-sm text-muted-foreground">Copilot / Code Completion</p>
+                    <div className="pt-4 border-t border-primary/10">
+                      <p className="text-xs text-gray-500 group-hover:text-gray-400 transition-colors duration-300">
+                        Faster digging, same manual labor
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Excavator Era - Full Power */}
+              <div className="group relative">
+                <div className="volcanic-glass rounded-2xl p-8 border border-primary/40 hover:border-primary transition-all duration-500 relative overflow-hidden">
+                  {/* Animated background glow */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-magma-red/5 via-primary/10 to-magma-glow/5 opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-gradient-magma opacity-0 group-hover:opacity-5 transition-opacity duration-500" />
+
+                  {/* Icon Container */}
+                  <div className="relative mb-6 z-10">
+                    <div className="w-20 h-20 mx-auto rounded-2xl gradient-magma flex items-center justify-center relative overflow-hidden group-hover:scale-110 transition-transform duration-500 glow-magma">
+                      <span className="text-4xl relative z-10 animate-pulse-glow">⚡</span>
+                      {/* Intense glow */}
+                      <div className="absolute inset-0 blur-2xl bg-primary opacity-50 group-hover:opacity-70 transition-opacity duration-500" />
+                    </div>
+                    {/* Progress indicator - bright */}
+                    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-primary border-2 border-volcanic-surface hidden md:block shadow-[0_0_10px_rgba(237,106,37,0.8)] animate-pulse" />
+                  </div>
+
+                  <div className="text-center space-y-3 relative z-10">
+                    <h4 className="font-display text-xl font-bold gradient-magma-text">
+                      The Excavator Era
+                    </h4>
+                    <p className="text-sm text-muted-foreground">Agentic Workforce</p>
+                    <div className="pt-4 border-t border-primary/20">
+                      <p className="text-xs text-gray-400 font-semibold">
+                        Orchestrated autonomy at scale
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Corner accent */}
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-primary/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
