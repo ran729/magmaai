@@ -1,73 +1,170 @@
-# Welcome to your Lovable project
+# MagmaAI
 
-## Project info
+**The Authority for AI-Native R&D**
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+MagmaAI is a B2B SaaS platform that provides orchestration and governance for AI-native engineering organizations. Our speXAI platform sits between human intent and agentic AI systems, enabling teams to safely scale from manual coding through AI copilots into the full agentic era.
 
-## How can I edit this code?
+🌐 **Live Site**: [magmaai.dev](https://magmaai.dev)
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## Overview
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+MagmaAI addresses the critical challenges organizations face when adopting AI-driven development:
 
-Changes made via Lovable will be committed automatically to this repo.
+- **AI Governance**: Prevent architectural chaos while maintaining innovation velocity
+- **Safe Delegation**: Enable engineers to delegate to AI agents without requiring 10X supervision overhead
+- **Orchestration**: Coordinate AI agent swarms without breaking existing systems
+- **Context Preservation**: Maintain organizational memory and architectural DNA across AI-generated code
 
-**Use your preferred IDE**
+### The speXAI Platform
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Our platform provides four core capabilities:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+1. **Orchestration & Authorization Layer** - Operating system for AI-native R&D
+2. **Spec-to-Insightful Code** - Converts human intent into structured data agents can consume
+3. **Organizational Memory & Context** - Captures architectural patterns and business intent
+4. **Closed-Loop Learning Flywheel** - Continuous improvement through plan vs. production analysis
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## Tech Stack
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Core Technologies
 
-# Step 3: Install the necessary dependencies.
-npm i
+- **Framework**: React 18.3 + TypeScript 5.5
+- **Build Tool**: Vite 5.4
+- **UI Components**: shadcn/ui (Radix UI primitives)
+- **Styling**: Tailwind CSS 3.4 with custom magma/volcanic theme
+- **Routing**: React Router v6
+- **Forms**: React Hook Form + Zod validation
+- **State Management**: TanStack React Query
+- **Testing**: Vitest + Testing Library
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### Development Tools
+
+- ESLint with TypeScript support
+- Vite SWC for fast refresh
+- Custom fonts: Space Grotesk (display), Inter (body)
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+ and npm (recommended: use [nvm](https://github.com/nvm-sh/nvm))
+- Git
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/ran729/magmaai.git
+
+# Navigate to project directory
+cd magmaai
+
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:8090`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Available Scripts
 
-**Use GitHub Codespaces**
+```bash
+npm run dev          # Start development server with hot reload
+npm run build        # Production build
+npm run build:dev    # Development build (for testing)
+npm run preview      # Preview production build locally
+npm run lint         # Run ESLint
+npm test             # Run test suite
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+## Project Structure
 
-This project is built with:
+```
+magmaai/
+├── src/
+│   ├── components/          # React components
+│   │   ├── ui/             # shadcn/ui base components
+│   │   ├── Hero.tsx        # Hero section with branding
+│   │   ├── Problem.tsx     # Problem statement section
+│   │   ├── Solution.tsx    # Platform features section
+│   │   ├── Team.tsx        # Founder profiles
+│   │   └── ...
+│   ├── pages/              # Page components
+│   │   ├── Index.tsx       # Main landing page
+│   │   └── NotFound.tsx    # 404 page
+│   ├── hooks/              # Custom React hooks
+│   ├── lib/                # Utility functions
+│   ├── assets/             # Images and static assets
+│   └── App.tsx             # Root application component
+├── public/                 # Public static files
+├── index.html              # HTML entry point
+└── vite.config.ts          # Vite configuration
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
+## Deployment
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+### GitHub Pages
 
-## Can I connect a custom domain to my Lovable project?
+This project is deployed to GitHub Pages with a custom domain configuration.
 
-Yes, you can!
+**Automatic Deployment**: Pushes to the main branch trigger automatic deployment.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+**Custom Domain**: Configured for `magmaai.dev` via CNAME settings.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+**SPA Routing**: The `404.html` redirect ensures client-side routing works correctly on GitHub Pages.
+
+### Build Configuration
+
+For subdirectory hosting, set the `VITE_BASE_PATH` environment variable:
+
+```bash
+# Example: deploying to github.io/magmaai/
+VITE_BASE_PATH=/magmaai/ npm run build
+```
+
+---
+
+## Design System
+
+### Color Palette
+
+- **Magma Theme**: Orange/red gradient palette with glow effects
+- **Volcanic Theme**: Dark surface colors for backgrounds
+- **Custom Animations**: Fade-in, slide-in, scale-in effects
+
+### Typography
+
+- **Display Font**: Space Grotesk (headings, hero text)
+- **Body Font**: Inter (paragraphs, UI elements)
+
+### Components
+
+Built with shadcn/ui for accessible, customizable React components including:
+- Forms (Input, Textarea, Button)
+- Navigation (Navbar with mobile responsiveness)
+- Toast notifications
+- Cards and layouts
+
+---
+
+## Contributing
+
+This is a private project currently in development. For inquiries, please contact the team through [magmaai.dev](https://magmaai.dev).
+
+---
+
+## License
+
+Copyright © 2025 MagmaAI. All rights reserved.
