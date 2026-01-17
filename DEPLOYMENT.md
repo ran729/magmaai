@@ -1,16 +1,16 @@
 # GitHub Pages Deployment Guide
 
-This project is configured for deployment to GitHub Pages with support for both subdirectory hosting and custom domains.
+This project is configured for deployment to GitHub Pages with support for both custom domains and subdirectory hosting.
 
-## Default Setup (GitHub Pages Subdirectory)
+## Default Setup (Custom Domain)
 
-By default, the site deploys to: `https://ran729.github.io/magmaai/`
+By default, the site is configured for custom domain deployment: `https://magmaai.dev/`
 
 No additional configuration needed - just push to the `main` branch.
 
 ## Custom Domain Setup
 
-If you're using a custom domain (e.g., `magmaai.com`), follow these steps:
+The site is already configured for the custom domain `magmaai.dev`. To use a different domain:
 
 ### 1. Configure GitHub Pages Custom Domain
 
@@ -21,22 +21,27 @@ If you're using a custom domain (e.g., `magmaai.com`), follow these steps:
    - For apex domain (magmaai.com): Add A records to GitHub's IPs
    - For subdomain (www.magmaai.com): Add CNAME record pointing to `ran729.github.io`
 
-### 2. Update Base Path Environment Variable
-
-1. Go to repository settings: `https://github.com/ran729/magmaai/settings/variables/actions`
-2. Click "New repository variable"
-3. Name: `VITE_BASE_PATH`
-4. Value: `/`
-5. Click "Add variable"
-
-### 3. Redeploy
+### 2. Redeploy
 
 Push to `main` branch or manually trigger the workflow from the Actions tab.
 
+## GitHub Pages Subdirectory Setup
+
+If you want to deploy to GitHub Pages without a custom domain (e.g., `https://ran729.github.io/magmaai/`):
+
+1. Remove the custom domain from repository settings
+2. Set the `VITE_BASE_PATH` environment variable:
+   - Go to: `https://github.com/ran729/magmaai/settings/variables/actions`
+   - Click "New repository variable"
+   - Name: `VITE_BASE_PATH`
+   - Value: `/magmaai/`
+   - Click "Add variable"
+3. Redeploy by pushing to `main` or triggering the workflow
+
 ## How It Works
 
-- **Subdirectory mode** (default): Uses base path `/magmaai/` for all routes and assets
-- **Custom domain mode**: Uses base path `/` (root) when `VITE_BASE_PATH` is set to `/`
+- **Custom domain mode** (default): Uses base path `/` for clean URLs on your domain
+- **Subdirectory mode**: Uses base path `/magmaai/` when `VITE_BASE_PATH` is set to `/magmaai/`
 
 The configuration automatically handles:
 - Asset path resolution
@@ -54,9 +59,9 @@ npm run dev  # Development server at http://localhost:8090
 ## Manual Build
 
 ```bash
-# Build for GitHub Pages subdirectory (default)
+# Build for custom domain (default)
 npm run build:prod
 
-# Build for custom domain
-VITE_BASE_PATH=/ npm run build:prod
+# Build for GitHub Pages subdirectory
+VITE_BASE_PATH=/magmaai/ npm run build:prod
 ```

@@ -6,9 +6,9 @@ import { componentTagger } from "lovable-tagger";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   // Set base path for GitHub Pages deployment
-  // Uses '/magmaai/' for production (GitHub Pages subdirectory)
-  // Set VITE_BASE_PATH='/' env var when using custom domain
-  base: mode === 'production' ? (process.env.VITE_BASE_PATH || '/magmaai/') : '/',
+  // Using '/' for custom domain (magmaai.dev)
+  // Change to '/magmaai/' if deploying to GitHub Pages subdirectory
+  base: mode === 'production' ? (process.env.VITE_BASE_PATH || '/') : '/',
   server: {
     host: "::",
     port: 8090,
