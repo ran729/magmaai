@@ -159,16 +159,6 @@ Built with shadcn/ui for accessible, customizable React components including:
 
 ---
 
-## Team
-
-**Matan Zur** - CEO
-Former CTO at Similarweb, architected Data Partnership Vertical ($0→$80M ARR)
-
-**Ran Sasportas** - CTO
-Elite IDF veteran, 15+ years R&D, led Similarweb's $80M Data Vertical
-
----
-
 ## Contributing
 
 This is a private project currently in development. For inquiries, please contact the team through [magmaai.dev](https://magmaai.dev).
