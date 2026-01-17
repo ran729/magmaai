@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Form Entry ID Extractor</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #fff;
+        }
+        .container {
+            background: #2a2a2a;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        h1 { color: #ff6b35; }
+        .instructions {
+            background: #333;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .step {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .result {
+            background: #1a1a1a;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+        button {
+            background: #ff6b35;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #ff8555;
+        }
+        .copy-btn {
+            background: #4CAF50;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔥 Google Form Entry ID Extractor</h1>
+
+        <div class="instructions">
+            <h2>Instructions:</h2>
+            <div class="step">1. Open your Google Form in a new tab:
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfCfnUuapnd-ObgyytL8zZpqAKBoP3cWPeOLjF19C7a3rjhtQ/viewform"
+                   target="_blank" style="color: #ff6b35;">Click here</a>
+            </div>
+            <div class="step">2. Press <strong>F12</strong> to open Developer Tools</div>
+            <div class="step">3. Go to the <strong>Console</strong> tab</div>
+            <div class="step">4. Copy and paste the script below into the console</div>
+            <div class="step">5. Press <strong>Enter</strong></div>
+        </div>
+
+        <h3>Copy this script:</h3>
+        <div class="result" id="script">// Extract all entry IDs from Google Form
+const entries = {};
+document.querySelectorAll('[name^="entry."]').forEach(input => {
+    const label = input.closest('[role="listitem"]')?.querySelector('[role="heading"]')?.textContent ||
+                  input.getAttribute('aria-label') ||
+                  'Unknown';
+    entries[label.trim()] = input.name;
+});
+
+console.log('Entry IDs found:');
+console.table(entries);
+console.log('\nCopy this to your WaitlistForm.tsx:');
+console.log(`const FORM_ENTRY_IDS = {
+  name: "${entries['Your Full Name'] || 'ENTRY_NOT_FOUND'}",
+  company: "${entries['Company Name'] || 'ENTRY_NOT_FOUND'}",
+  email: "${entries['Work Email Address'] || 'ENTRY_NOT_FOUND'}",
+};`);</div>
+        <button onclick="copyScript()">📋 Copy Script</button>
+
+        <h3 style="margin-top: 40px;">Alternative: Manual Method</h3>
+        <div class="instructions">
+            <div class="step">1. Open the form and right-click on the <strong>first input field</strong></div>
+            <div class="step">2. Select <strong>"Inspect"</strong></div>
+            <div class="step">3. Look for <code>name="entry.XXXXXXXXX"</code> in the highlighted HTML</div>
+            <div class="step">4. Repeat for each field and note down the entry IDs</div>
+        </div>
+    </div>
+
+    <script>
+        function copyScript() {
+            const script = document.getElementById('script').textContent;
+            navigator.clipboard.writeText(script).then(() => {
+                alert('Script copied! Now paste it in the browser console on the Google Form page.');
+            });
+        }
+    </script>
+</body>
+</html>
