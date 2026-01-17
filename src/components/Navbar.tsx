@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,13 +11,6 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const navLinks = [
-    { label: "Problem", href: "#problem" },
-    { label: "Solution", href: "#solution" },
-    { label: "Product", href: "#product" },
-    { label: "Team", href: "#team" },
-  ];
 
   return (
     <nav
@@ -35,50 +26,12 @@ const Navbar = () => {
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-muted-foreground hover:text-foreground transition-colors duration-300 text-sm font-medium"
-            >
-              {link.label}
-            </a>
-          ))}
+        <div className="flex items-center">
           <Button variant="magma" size="sm" asChild>
             <a href="#waitlist">Join Waitlist</a>
           </Button>
         </div>
-
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-foreground"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
       </div>
-
-      {/* Mobile Navigation */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden volcanic-glass mt-4 mx-6 rounded-xl p-6">
-          <div className="flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="text-muted-foreground hover:text-foreground transition-colors duration-300 text-sm font-medium"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {link.label}
-              </a>
-            ))}
-            <Button variant="magma" size="sm" asChild>
-              <a href="#waitlist">Join Waitlist</a>
-            </Button>
-          </div>
-        </div>
-      )}
     </nav>
   );
 };
