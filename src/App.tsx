@@ -9,9 +9,9 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const App = () => {
-  // Use VITE_BASE_PATH env var for custom domains, defaults to '/magmaai' for GitHub Pages
+  // Use VITE_BASE_PATH env var if needed, defaults to '/' for custom domain
   const basename = import.meta.env.MODE === 'production'
-    ? (import.meta.env.VITE_BASE_PATH || '/magmaai')
+    ? (import.meta.env.VITE_BASE_PATH || '')
     : '';
 
   return (
