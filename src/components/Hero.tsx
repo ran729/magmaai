@@ -45,8 +45,8 @@ const Hero = () => {
                 </a>
               </Button>
               <Button variant="magma-outline" size="xl" asChild>
-                <a href="#solution">
-                  Learn More
+                <a href="#waitlist">
+                  Coming Soon...
                 </a>
               </Button>
             </div>
