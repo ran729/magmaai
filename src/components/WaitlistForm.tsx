@@ -8,16 +8,11 @@ import { useToast } from "@/hooks/use-toast";
 const GOOGLE_FORM_ID = "1FAIpQLSfCfnUuapnd-ObgyytL8zZpqAKBoP3cWPeOLjF19C7a3rjhtQ";
 const GOOGLE_FORM_ACTION_URL = `https://docs.google.com/forms/d/e/${GOOGLE_FORM_ID}/formResponse`;
 
-// TODO: Replace these with actual entry IDs from your Google Form
-// To get these IDs:
-// 1. Open your Google Form in edit mode
-// 2. Click "Preview" (eye icon)
-// 3. Right-click and "Inspect" the form
-// 4. Look for input fields with names like "entry.XXXXXXXXX"
+// Google Form entry IDs
 const FORM_ENTRY_IDS = {
-  name: "entry.YOUR_NAME_ENTRY_ID",
-  company: "entry.YOUR_COMPANY_ENTRY_ID",
-  email: "entry.YOUR_EMAIL_ENTRY_ID",
+  name: "entry.1001137070",
+  company: "entry.1619884169",
+  email: "entry.1109049885",
 };
 
 const WaitlistForm = () => {
