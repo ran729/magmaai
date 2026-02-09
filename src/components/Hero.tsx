@@ -37,16 +37,10 @@ const Hero = () => {
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in" style={{ animationDelay: "0.3s" }}>
+            <div className="flex justify-center items-center animate-fade-in" style={{ animationDelay: "0.3s" }}>
               <Button variant="magma" size="xl" className="w-full sm:w-auto" asChild>
                 <a href="#waitlist">
                   Join the Waitlist
-                  <ArrowRight className="w-5 h-5" />
-                </a>
-              </Button>
-              <Button variant="magma-outline" size="xl" className="w-full sm:w-auto" asChild>
-                <a href="#solution">
-                  See How It Works
                   <ArrowRight className="w-5 h-5" />
                 </a>
               </Button>
