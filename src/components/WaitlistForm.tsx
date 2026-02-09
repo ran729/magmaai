@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ArrowRight, CheckCircle, Sparkles } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import ScrollReveal from "@/components/ScrollReveal";
 
 // Google Form configuration
 const GOOGLE_FORM_ID = "1FAIpQLSfCfnUuapnd-ObgyytL8zZpqAKBoP3cWPeOLjF19C7a3rjhtQ";
@@ -92,21 +93,23 @@ const WaitlistForm = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-3xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full volcanic-glass mb-6">
-              <Sparkles className="w-4 h-4 text-primary" />
-              <span className="text-sm text-muted-foreground">Limited Early Access</span>
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full volcanic-glass mb-6">
+                <Sparkles className="w-4 h-4 text-primary" />
+                <span className="text-sm text-muted-foreground">Limited Early Access</span>
+              </div>
+              <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
+                Join the <span className="gradient-magma-text">Evolution</span> of Engineering
+              </h2>
+              <p className="text-muted-foreground text-lg">
+                Get early access to MagmaAI and be among the first to transform your R&D organization into an AI-native powerhouse.
+              </p>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-              Join the <span className="gradient-magma-text">Evolution</span> of Engineering
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              Get early access to MagmaAI and be among the first to transform your R&D organization into an AI-native powerhouse.
-            </p>
-          </div>
+          </ScrollReveal>
 
           {/* Form */}
+          <ScrollReveal delay={0.1}>
           <form onSubmit={handleSubmit} className="volcanic-glass rounded-2xl p-8 md:p-12">
             <div className="grid md:grid-cols-2 gap-6 mb-6">
               <div className="space-y-2">
@@ -176,6 +179,7 @@ const WaitlistForm = () => {
               By joining, you agree to receive updates about MagmaAI. Unsubscribe anytime.
             </p>
           </form>
+          </ScrollReveal>
 
           {/* Trust Indicators */}
           <div className="mt-12 flex flex-wrap justify-center gap-8 items-center text-muted-foreground text-sm">
