@@ -12,18 +12,21 @@ const Hero = () => {
           <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold animate-fade-in tracking-wide leading-tight">
             <span className="text-foreground" style={{
               textShadow: '0 0 30px rgba(0,0,0,0.9), 0 0 60px rgba(0,0,0,0.7)'
-            }}>The autonomous brain for </span>
-            <span className="gradient-magma-text glow-text">AI-Native</span>
+            }}>Your AI agents can code. </span>
+            <br />
             <span className="text-foreground" style={{
               textShadow: '0 0 30px rgba(0,0,0,0.9), 0 0 60px rgba(0,0,0,0.7)'
-            }}> R&D</span>
+            }}>They just can't decide </span>
+            <span className="gradient-magma-text glow-text">what</span>
+            <span className="text-foreground" style={{
+              textShadow: '0 0 30px rgba(0,0,0,0.9), 0 0 60px rgba(0,0,0,0.7)'
+            }}> to code.</span>
           </h1>
 
           {/* Subheadline */}
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl animate-fade-in" style={{
             animationDelay: "0.2s"
-          }}>Enable AI Agents to work autonomously across the SDLC.
-Built for AI Agents, Governed by Engineers.</p>
+          }}>MagmaAI gives coding agents the organizational context, governance, and institutional knowledge to work autonomously — so engineers govern strategy, not keystrokes.</p>
 
             {/* CTA Buttons */}
             <div className="flex justify-center items-center animate-fade-in" style={{
