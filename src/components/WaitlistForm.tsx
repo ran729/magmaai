@@ -100,10 +100,10 @@ const WaitlistForm = () => {
                 <span className="text-sm text-muted-foreground">Limited Early Access</span>
               </div>
               <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-                Join the <span className="gradient-magma-text">Evolution</span> of Engineering
+                Get Early Access to Our <span className="gradient-magma-text">Beta Program</span>
               </h2>
               <p className="text-muted-foreground text-lg">
-                Get early access to MagmaAI and be among the first to transform your R&D organization into an AI-native powerhouse.
+                Be among the first to experience MagmaAI. Join our beta program and help shape the future of AI-native R&D.
               </p>
             </div>
           </ScrollReveal>
