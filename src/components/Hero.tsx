@@ -1,15 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
-import volcanoBackground from "@/assets/volcano-background.png";
+import heroLogo from "@/assets/hero-logo.png";
 const Hero = () => {
   return <section className="relative min-h-screen flex flex-col overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
-      backgroundImage: `url(${volcanoBackground})`
-    }} />
+      {/* Center Logo */}
+      <div className="relative z-10 flex-1 flex items-center justify-center pt-20">
+        <img src={heroLogo} alt="MAI Logo" className="w-64 sm:w-80 md:w-96 lg:w-[28rem] h-auto" />
+      </div>
 
       {/* Top Section - Headline */}
-      <div className="relative z-10 pt-28 pb-8">
+      <div className="relative z-10 pb-8">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto text-center">
             <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold animate-fade-in tracking-wide leading-tight">
@@ -25,8 +25,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Middle Section - Spacer for Volcano */}
-      <div className="flex-1" />
+      {/* Spacer removed */}
 
       {/* Bottom Section - Subheadline & CTAs */}
       <div className="relative z-10 pb-24">
