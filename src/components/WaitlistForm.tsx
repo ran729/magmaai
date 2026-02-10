@@ -20,6 +20,8 @@ const WaitlistForm = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
+  const [teamSize, setTeamSize] = useState("");
+  const [aiTools, setAiTools] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
@@ -97,13 +99,13 @@ const WaitlistForm = () => {
             <div className="text-center mb-12">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full volcanic-glass mb-6">
                 <Sparkles className="w-4 h-4 text-primary" />
-                <span className="text-sm text-muted-foreground">Limited Early Access</span>
+                <span className="text-sm text-muted-foreground">Private Beta</span>
               </div>
               <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-                Get Early Access to Our <span className="gradient-magma-text">Beta Program</span>
+                We're onboarding a small number of <span className="gradient-magma-text">R&D teams</span>
               </h2>
               <p className="text-muted-foreground text-lg">
-                Be among the first to experience MagmaAI. Join our beta program and help shape the future of AI-native R&D.
+                Tell us about your team and we'll reach out within 48 hours. Early adopters get hands-on onboarding and direct input into the roadmap.
               </p>
             </div>
           </ScrollReveal>
@@ -141,17 +143,50 @@ const WaitlistForm = () => {
                 />
               </div>
             </div>
+            <div className="grid md:grid-cols-2 gap-6 mb-6">
+              <div className="space-y-2">
+                <label htmlFor="email" className="text-sm font-medium text-foreground">
+                  Work Email
+                </label>
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="john@company.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className="bg-volcanic-dark border-border focus:border-primary focus:ring-primary"
+                />
+              </div>
+              <div className="space-y-2">
+                <label htmlFor="teamSize" className="text-sm font-medium text-foreground">
+                  Engineering Team Size
+                </label>
+                <select
+                  id="teamSize"
+                  value={teamSize}
+                  onChange={(e) => setTeamSize(e.target.value)}
+                  required
+                  className="flex h-10 w-full rounded-md border border-border bg-volcanic-dark px-3 py-2 text-sm text-foreground ring-offset-background focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+                >
+                  <option value="" disabled>Select team size</option>
+                  <option value="1-5">1–5 engineers</option>
+                  <option value="6-20">6–20 engineers</option>
+                  <option value="21-50">21–50 engineers</option>
+                  <option value="50+">50+ engineers</option>
+                </select>
+              </div>
+            </div>
             <div className="space-y-2 mb-8">
-              <label htmlFor="email" className="text-sm font-medium text-foreground">
-                Work Email
+              <label htmlFor="aiTools" className="text-sm font-medium text-foreground">
+                Which AI coding tools does your team use?
               </label>
               <Input
-                id="email"
-                type="email"
-                placeholder="john@company.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
+                id="aiTools"
+                type="text"
+                placeholder="e.g. Copilot, Cursor, Cody, Devin..."
+                value={aiTools}
+                onChange={(e) => setAiTools(e.target.value)}
                 className="bg-volcanic-dark border-border focus:border-primary focus:ring-primary"
               />
             </div>
@@ -165,18 +200,18 @@ const WaitlistForm = () => {
               {isLoading ? (
                 <span className="flex items-center gap-2">
                   <div className="w-5 h-5 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
-                  Joining...
+                  Submitting...
                 </span>
               ) : (
                 <>
-                  Request Early Access
+                  Apply for Private Beta
                   <ArrowRight className="w-5 h-5" />
                 </>
               )}
             </Button>
 
             <p className="text-center text-muted-foreground text-sm mt-6">
-              By joining, you agree to receive updates about MagmaAI. Unsubscribe anytime.
+              We review every application. You'll hear from us within 48 hours.
             </p>
           </form>
           </ScrollReveal>
@@ -185,15 +220,15 @@ const WaitlistForm = () => {
           <div className="mt-12 flex flex-wrap justify-center gap-8 items-center text-muted-foreground text-sm">
             <div className="flex items-center gap-2">
               <CheckCircle className="w-4 h-4 text-primary" />
-              No credit card required
+              Hands-on onboarding
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle className="w-4 h-4 text-primary" />
-              Demo access included
+              Direct roadmap input
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle className="w-4 h-4 text-primary" />
-              Priority onboarding
+              Founding member pricing
             </div>
           </div>
         </div>
