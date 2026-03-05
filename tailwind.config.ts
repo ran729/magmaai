@@ -66,10 +66,16 @@ export default {
           dark: "hsl(var(--volcanic-dark))",
           surface: "hsl(var(--volcanic-surface))",
         },
+        terminal: {
+          border: "hsl(var(--terminal-border))",
+          bg: "hsl(var(--terminal-bg))",
+          header: "hsl(var(--terminal-header))",
+        },
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        display: ['Space Grotesk', 'sans-serif'],
+        mono: ['JetBrains Mono', 'monospace'],
+        display: ['JetBrains Mono', 'monospace'],
+        sans: ['JetBrains Mono', 'monospace'],
       },
       borderRadius: {
         lg: "var(--radius)",
