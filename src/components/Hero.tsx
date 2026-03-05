@@ -1,51 +1,60 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import heroLogo from "@/assets/hero-logo.png";
+
 const Hero = () => {
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-    <div className="relative z-10 container mx-auto px-6">
-      <div className="max-w-4xl mx-auto flex flex-col items-center text-center gap-6 md:gap-8">
-        {/* Logo */}
-        <img src={heroLogo} alt="MAI Logo" className="w-40 sm:w-56 md:w-72 lg:w-80 h-auto" />
+  return (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Ambient glow */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-primary/5 rounded-full blur-[150px]" />
 
-        {/* Headline */}
-        <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold animate-fade-in tracking-wide leading-tight">
-          <span className="text-foreground" style={{
-            textShadow: '0 0 30px rgba(0,0,0,0.9), 0 0 60px rgba(0,0,0,0.7)'
-          }}>AI agents can code. </span>
-          <br />
-          <span className="text-foreground" style={{
-            textShadow: '0 0 30px rgba(0,0,0,0.9), 0 0 60px rgba(0,0,0,0.7)'
-          }}>They can't reach </span>
-          <span className="gradient-magma-text glow-text">autonomy.</span>
+      <div className="relative z-10 container mx-auto px-6">
+        <div className="max-w-4xl mx-auto">
+          {/* Terminal window */}
+          <div className="terminal-window">
+            <div className="terminal-header">
+              <span>MAGMA.AI — MAIN TERMINAL</span>
+              <span className="text-muted-foreground">PID 001</span>
+            </div>
+            <div className="terminal-body flex flex-col items-center text-center gap-6 md:gap-8 py-12 md:py-20">
+              {/* Logo */}
+              <img src={heroLogo} alt="MAI Logo" className="w-32 sm:w-44 md:w-56 lg:w-64 h-auto opacity-90" />
 
-        </h1>
+              {/* Headline */}
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-wider leading-tight">
+                <span className="text-foreground">AI agents can code.</span>
+                <br />
+                <span className="text-foreground">They can't reach </span>
+                <span className="text-primary glow-text">autonomy.</span>
+              </h1>
 
-        {/* Subheadline */}
-        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl animate-fade-in" style={{
-          animationDelay: "0.2s"
-        }}>The gap isn't intelligence — it's your unique organization's context, governance, and institutional knowledge. MagmaAI bridges it so engineers govern strategy, not keystrokes.</p>
+              {/* Subheadline */}
+              <p className="text-sm md:text-base text-muted-foreground max-w-2xl leading-relaxed tracking-wide">
+                {'>'} The gap isn't intelligence — it's your unique organization's context, governance, and institutional knowledge. MagmaAI bridges it so engineers govern strategy, not keystrokes.
+              </p>
 
-        {/* CTA Buttons */}
-        <div className="flex justify-center items-center animate-fade-in" style={{
-          animationDelay: "0.3s"
-        }}>
-          <Button variant="magma" size="xl" className="w-full sm:w-auto" asChild>
-            <a href="#waitlist">
-              Join the Waitlist
-              <ArrowRight className="w-5 h-5" />
-            </a>
-          </Button>
+              {/* CTA */}
+              <div className="flex justify-center items-center pt-4">
+                <Button variant="magma" size="xl" className="w-full sm:w-auto tracking-widest uppercase text-sm" asChild>
+                  <a href="#waitlist">
+                    Join the Waitlist
+                    <ArrowRight className="w-5 h-5" />
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
 
-    {/* Scroll Indicator */}
-    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-      <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex items-start justify-center p-2">
-        <div className="w-1 h-2 bg-primary rounded-full" />
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="w-5 h-8 border border-border flex items-start justify-center p-1.5">
+          <div className="w-0.5 h-2 bg-primary" />
+        </div>
       </div>
-    </div>
-  </section>;
+    </section>
+  );
 };
+
 export default Hero;
